@@ -1,4 +1,4 @@
-package com.gustavo.helpdesk.domain.repositories;
+package com.gustavo.helpdesk.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
