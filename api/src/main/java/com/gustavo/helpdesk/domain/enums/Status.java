@@ -1,4 +1,4 @@
-package com.gustavo.helpdesk.enumerated;
+package com.gustavo.helpdesk.domain.enums;
 
 public enum Status {
     ABERTO(0, "ABERTO"), ANDAMENTO(1, "ANDAMENTO"), ENCERRADO(2, "ENCERRADO");
