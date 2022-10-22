@@ -36,7 +36,7 @@ public abstract class Pessoa implements Serializable {
     protected String senha;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "PERFIS")
+    @CollectionTable(name = "PERFIS") // Cria uma tabela no banco com os valores da enumeração
     protected Set<Integer> perfis = new HashSet<>();
 
     @JsonFormat(pattern = "dd/MM/yyyy")
