@@ -1,5 +1,8 @@
 package com.gustavo.helpdesk.resources;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +26,13 @@ public class TecnicoResource {
     public ResponseEntity<TecnicoDTO> findById(@PathVariable Integer id) {
         Tecnico obj = service.findById(id);
         return ResponseEntity.ok().body(new TecnicoDTO(obj));
-    }  
+    }
+    
+    @GetMapping
+    public ResponseEntity<List<TecnicoDTO>> findAll() {
+        List<Tecnico> list = service.findAll();
+        List<TecnicoDTO> listDto = list.stream().map(tecnico -> new TecnicoDTO(tecnico)).collect(Collectors.toList());
+        return ResponseEntity.ok().body(listDto);
+    }
 
 }
